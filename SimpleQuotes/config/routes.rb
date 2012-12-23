@@ -1,5 +1,10 @@
 SimpleQuotes::Application.routes.draw do
+  get "home/index"
+
   resources :quotes
+
+	match 'home/index' => 'home#index', :as => 'home'
+	root :to => 'home#index'
 
 
   # The priority is based upon order of creation:
